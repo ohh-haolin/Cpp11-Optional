@@ -129,7 +129,7 @@ namespace {
 		auto map(T_ fun) -> Optional<decltype(fun(_ptr))>
 		{
 			static_assert(is_invocable<T_, T*>::value, "Optional::map only accept the invocable whose parameter type is T*");
-			static_assert(!::std::is_void<decltype(fun(_ptr))>::value, "Optional::filter only accept the callable whose return type is not void");
+			static_assert(!::std::is_void<decltype(fun(_ptr))>::value, "Optional::map only accept the callable whose return type is not void");
 
 			if(fun && _ptr)
 			{
